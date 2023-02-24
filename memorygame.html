@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./memorygame.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Memory Game</h1>
+      <img src="#" alt="logo" /><!--logo image goes here -->
+      <div id="timer">
+        <!--Timer counts up from zero. Starts as soon as the page loads. JS is already added to file-->
+        <label id="minutes">00</label>:<label id="seconds">00</label>
+      </div>
+    </header>
+    <main>
+      <!--Memory game container -->
+      <div class="card-container">
+        <div id="cat"></div>
+        <div id="dog"></div>
+        <div id="horse"></div>
+        <div id="cow"></div>
+        <!--id's need to be changed to spanish ^^^ -->
+        <div id="cat"></div>
+        <div id="dog"></div>
+        <div id="horse"></div>
+        <div id="cow"></div>
+
+        <div id="mouse"></div>
+        <div id="pig"></div>
+        <div id="goat"></div>
+        <div id="sheep"></div>
+        <!-- id's need to be changed to spanish ^^^ -->
+        <div id="mouse"></div>
+        <div id="pig"></div>
+        <div id="goat"></div>
+        <div id="sheep"></div>
+      </div>
+    </main>
+    <footer>
+      <button type="button" id="hint-button">Hint!</button>
+      <button type="button" id="reset-button">Reset</button>
+    </footer>
+    <script src="./memorygame.js"></script>
+  </body>
+</html>
