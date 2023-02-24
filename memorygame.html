@@ -7,17 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Memory Game</title>
   <link rel="stylesheet" href="./memorygame.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <h1 id="title">Memory Game</h1> <!--come up with title ('memoria', 'animales') -->
-    <img src="#" alt="logo" /><!--logo image goes here -->
+  <div class="header">
+    <div id="left-side">
+      <h1 id="title">Hablo</h1>
+      <img id="logo" src="/logo.png" alt="logo" /><!--logo image goes here -->
+    </div>
     <div id="timer">
       <!--Timer counts up from zero. Starts as soon as the page loads. JS is already added to file-->
       <label id="minutes">00</label>:<label id="seconds">00</label>
     </div>
-  </header>
+  </div>
   <main>
     <!--Memory game container -->
     <section class="card-container">
@@ -105,10 +110,10 @@
 
     </section>
   </main>
-  <footer>
+  <div class="footer">
     <button type="button" id="hint-button">Hint!</button>
     <button type="button" id="reset-button">Reset</button>
-  </footer>
+  </div>
   <script src="./memorygame.js"></script>
 </body>
 
