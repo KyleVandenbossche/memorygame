@@ -1,8 +1,20 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  /* includes padding and border values into element’s total width and height */
 }
 
-header {
-  padding: 2;
+body {
+  height: 100vh;
+  display: flex;
+  background: #060AB2;
+}
+
+.card-container {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
