@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* includes padding and border values into element’s total width and height */
+  /* border-box includes padding and border values into element’s total width and height */
 }
 
 body {
@@ -11,7 +11,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #060AB2;
+  background: rgb(254, 203, 205);
+  background: linear-gradient(90deg, rgba(254, 203, 205, 1) 0%, rgba(255, 255, 222, 1) 35%, rgba(203, 215, 255, 1) 100%);
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -20,12 +21,11 @@ body {
   top: 0;
   overflow: hidden;
   background-color: #f1f1f1;
-  padding: 20px 10px;
+  padding: 15px 25px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
 }
 
 #logo {
@@ -41,18 +41,21 @@ body {
 .footer {
   position: fixed;
   bottom: 0;
-  overflow: hidden;
-  background-color: #f1f1f1;
   padding: 20px 10px;
   width: 100%;
   display: flex;
   justify-content: center;
-  /* align-items: center;
-  flex-direction: row; these two are redundant in window inspector*/
+}
+
+button {
+  padding: 5px;
+  font-size: 1rem;
+  margin: 4px;
 }
 
 #title {
   font-family: 'Chewy', cursive;
+  padding-right: 10px;
 }
 
 .card-container {
@@ -61,7 +64,6 @@ body {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  /*text-align: center; not working with divs*/
   color: white;
   perspective: 1000px;
   /*3-D flip - sets how far in z plane object is from user. Lower value = bigger effect.*/
@@ -90,10 +92,11 @@ body {
   transition: transform .2s;
 }
 
-/* .memory-card.flip {
+.memory-card.flip {
   transform: rotateY(180deg);
 }
-add to flip class (JS file) to animate */
+
+/* add to flip class (JS file) to animate */
 
 .front,
 .back {
@@ -101,7 +104,7 @@ add to flip class (JS file) to animate */
   height: 100%;
   padding: 20px;
   position: absolute;
-  border-radius: 5px;
+  /* border-radius: 5px; behaving strangely with other animation feature */
   background: #1C7CCC;
   backface-visibility: hidden;
 }
@@ -112,7 +115,14 @@ add to flip class (JS file) to animate */
 
 @media only screen and (min-width: 768px) {
   .card-container {
-    width: 640px;
-    height: 640px;
+    height: 400px;
+    width: 550px;
+  }
+
+  .footer {
+    position: sticky;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
   }
 }
