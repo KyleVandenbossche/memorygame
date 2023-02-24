@@ -12,9 +12,63 @@ body {
 }
 
 .card-container {
-  width: 640px;
-  height: 640px;
+  width: 350px;
+  height: 350px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  /*text-align: center; not working with divs*/
+  color: white;
+  perspective: 1000px;
+  /*3-D flip - sets how far in z plane object is from user. Lower value = bigger effect.*/
+}
+
+.bottom-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+/* .memory-card.flip {
+  transform: rotateY(180deg);
+}
+add to flip class (JS file) to animate */
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: #1C7CCC;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+@media only screen and (min-width: 768px) {
+  .card-container {
+    width: 640px;
+    height: 640px;
+  }
 }
