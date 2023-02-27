@@ -11,8 +11,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(254, 203, 205);
-  background: linear-gradient(90deg, rgba(254, 203, 205, 1) 0%, rgba(255, 255, 222, 1) 35%, rgba(203, 215, 255, 1) 100%);
+  background: rgb(166, 35, 128);
+  background: linear-gradient(90deg, rgba(166, 35, 128, 1) 0%, rgba(255, 213, 34, 1) 49%, rgba(129, 169, 52, 1) 92%);
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -105,7 +105,7 @@ button {
   padding: 20px;
   position: absolute;
   /* border-radius: 5px; behaving strangely with other animation feature */
-  background: #1C7CCC;
+  background: whitesmoke;
   backface-visibility: hidden;
 }
 
