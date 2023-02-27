@@ -1,4 +1,6 @@
 //code that runs the count up timer
+
+//timer needs to start (event listener) when user clicks their first card
 var minutesLabel = document.getElementById("minutes");
 var secondsLabel = document.getElementById("seconds");
 var totalSeconds = 0;
@@ -18,3 +20,5 @@ function pad(val) {
     return valString;
   }
 }
+
+//look at Matt's random name code for random cards?
