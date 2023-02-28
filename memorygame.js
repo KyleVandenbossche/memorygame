@@ -52,6 +52,29 @@ const timerFunction = () => {
 };
 const myTimeout = setInterval(timerFunction, 1000);
 
+//shuffle function
+// function shuffle() {
+//   cards.forEach(card => {
+//     let shuffledCards = Math.floor(Math.random() * array.length); //what array to use with our code?
+//     card.style.order = shuffledCards;
+//   });
+// }
+
+//jessica's shuffle function
+// function shuffle(cardArray) {
+//   let m = cardArray.length,
+//     t,
+//     i;
+//   while (m) {
+//     i = Math.floor(Math.random() * m--);
+//     t = cardArray[m];
+//     cardArray[m] = cardArray[i];
+//     cardArray[i] = t;
+//   }
+//   return cardArray;
+// }
+
+
 //look at Matt's random name code for random cards?
 
 
