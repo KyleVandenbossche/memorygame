@@ -1,7 +1,13 @@
 # HABLO 
  ### Mission: To make learning spanish fun in the form of a memory game for all ages
  
- ### HABLO is a web based memory game that focuses on cognitive building blocks, with an emphasis on matching English and Spanish words. It is designed with captivating colors that invite the user to spend time learning and having fun. 
+ ## HABLO is a web based memory game that focuses on cognitive building blocks, with an emphasis on matching English and Spanish words. It is designed with captivating colors that invite the user to spend time learning and having fun. 
+ 
+ ### Getting Started
+ Click the link here: (http://hablo.game.com) , to play! 
+ [Full Documentation Here]
+ 
+ 
 
 Team:
 - Kyle Vandenbossche: Create repo, readme.doc + CSS visibility/JS functions
