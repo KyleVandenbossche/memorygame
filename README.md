@@ -1,6 +1,5 @@
-# memorygame
-
-Team Project: Memory Game
+# Spanish Memorygame
+##Team Project: Memory Game
 
  
 
