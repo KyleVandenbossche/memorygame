@@ -22,3 +22,20 @@ function pad(val) {
 }
 
 //look at Matt's random name code for random cards?
+
+
+
+// Select all cards to assign a flip function on click
+
+(() => {
+    
+
+  const card = document.querySelector('.memory-card');
+  card.addEventListener('click', function() {
+    card.classList.toggle('flip');
+  });
+
+
+  
+} )();
+
