@@ -5,10 +5,10 @@ Team Project: Memory Game
  
 
 Team:
-*Kyle Vandenbossche: Create repo, readme.doc + CSS visibility/JS functions
-*Desiree Cushing: CSS + Design Styling + Creative Wireframing
-*Maggie Wernet: HTML Structure + JS Time button functionality, Cheat button functionality
-*Jessica Trela: Creative Learning, JS Grid structure, JS object functionality
+- Kyle Vandenbossche: Create repo, readme.doc + CSS visibility/JS functions
+- Desiree Cushing: CSS + Design Styling + Creative Wireframing
+- Maggie Wernet: HTML Structure + JS Time button functionality, Cheat button functionality
+- Jessica Trela: Creative Learning, JS Grid structure, JS object functionality
 
  
 
