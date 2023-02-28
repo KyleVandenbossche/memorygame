@@ -1,7 +1,7 @@
 # Spanish Memorygame
 ## Team Project: Memory Game
 
- 
+ ### Mission: To make learning spanish fun in the form of a memory game for all ages
 
 Team:
 - Kyle Vandenbossche: Create repo, readme.doc + CSS visibility/JS functions
