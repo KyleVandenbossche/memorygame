@@ -1,213 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory Game</title>
-    <link rel="stylesheet" href="./memorygame.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chewy&family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <div class="header">
-      <div id="left-side">
-        <h1 id="title">Hablo</h1>
-        <img
-          id="logo"
-          src="images/logo.png"
-          alt="logo"
-        /><!--logo image goes here -->
-      </div>
-      <div id="timer"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="./memorygame.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <div id="left-side">
+      <h1 id="title">Hablo</h1>
+      <img id="logo" src="images/logo.png" alt="logo" /><!--logo image goes here -->
     </div>
-    <main>
-      <!--Memory game container -->
-      <section class="card-container">
-        <div class="memory-card">
-          <img class="front" src="#" alt="Cat-English" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Cat</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Cat-Espanol" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Gato</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Dog-English" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Dog</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Dog-Espanol" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Perro</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Horse-English" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Horse</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Horse-Espanol" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Caballo</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Cow-English" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Cow</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Cow-Espanol" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Vaca</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Mouse-English" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Mouse</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Mouse-Espanol" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Ratón</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Pig-English" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Pig</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Pig-Espanol" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Cerdo</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Goat-English" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Goat</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Goat-Espanol" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Cabra</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Sheep-English" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Sheep</div>
-        </div>
-        <div class="memory-card">
-          <img class="front" src="#" alt="Sheep-Espanol" />
-          <img class="back" src="#" alt="Memory Card" />
-          <div class="bottom-center">Oveja</div>
-        </div>
-      </section>
-    </main>
-    <div class="footer">
-      <button type="button" id="start-button">Start</button>
-      <button type="button" id="hint-button">Hint!</button>
-      <button type="button" id="reset-button">Reset</button>
+    <div id="timer">
+      <!--Timer counts up from zero. Starts as soon as the page loads. JS is already added to file-->
+      <label id="minutes">00</label>:<label id="seconds">00</label>
     </div>
   </div>
   <main>
     <!--Memory game container -->
-    <div class="grid-container">
     <section class="card-container">
-       <!-- <div class="memory-card">
+      <div class="memory-card">
         <img class="front" src="#" alt="Cat-English">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Cat</div> -->
-      <!-- </div>
+        <img class="back" src="back_of_card.png"><p>Cat</p></div>
+        <div class="bottom-center">
+      </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Cat-Espanol">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Gato</div>
+        <img class="back" src="back_of_card.png"><p>Gato</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Dog-English">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Dog</div>
+        <img class="back" src="back_of_card.png"><p>Dog</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Dog-Espanol">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Perro</div>
+        <img class="back" src="back_of_card.png"><p>Perro</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Horse-English">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Horse</div>
+        <img class="back" src="back_of_card.png"><p>Horse</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Horse-Espanol">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Caballo</div>
+        <img class="back" src="back_of_card.png"><p>Caballo</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Cow-English">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Cow</div>
+        <img class="back" src="back_of_card.png"><p>Cow</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Cow-Espanol">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Vaca</div>
+        <img class="back" src="back_of_card.png"><p>Vaca</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Mouse-English">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Mouse</div>
+        <img class="back" src="back_of_card.png"><p>Mouse</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Mouse-Espanol">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Ratón</div>
+        <img class="back" src="back_of_card.png"><p>Ratón</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Pig-English">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Pig</div>
+        <img class="back" src="back_of_card.png"><p>Pig</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Pig-Espanol">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Cerdo</div>
+        <img class="back" src="back_of_card.png"><p>Cerdo</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Goat-English">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Goat</div>
+        <img class="back" src="back_of_card.png"><p>Sheep</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Goat-Espanol">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Cabra</div>
+        <img class="back" src="back_of_card.png"><p>Cabra</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Sheep-English">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Sheep</div>
+        <img class="back" src="back_of_card.png"><p>Sheep</p></div>
+        <div class="bottom-center">
       </div>
       <div class="memory-card">
         <img class="front" src="#" alt="Sheep-Espanol">
-        <img class="back" src="#" alt="Memory Card">
-        <div class="bottom-center">Oveja</div>
-      </div> -->
+        <img class="back" src="back_of_card.png"><p>Oveja</p></div>
+        <div class="bottom-center">
+      </div>
 
 
     </section>
-  </div>
   </main>
   <div class="footer">
-    <button type="button" id="start-button">Start</button>
     <button type="button" id="hint-button">Hint!</button>
     <button type="button" id="reset-button">Reset</button>
   </div>
