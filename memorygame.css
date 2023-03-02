@@ -120,6 +120,11 @@ p{
   transform: rotateY(180deg);
 }
 
+.front {
+  backface-visibility: visible;
+  transform: rotateY(180deg);
+}
+
 @media only screen and (min-width: 768px) {
   .card-container {
     height: 400px;
