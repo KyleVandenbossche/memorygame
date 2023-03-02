@@ -12,8 +12,13 @@ body {
   justify-content: center;
   align-items: center;
   background: rgb(166, 35, 128);
-  background: linear-gradient(90deg, rgba(166, 35, 128, 1) 0%, rgba(255, 213, 34, 1) 49%, rgba(129, 169, 52, 1) 92%);
-  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(
+    90deg,
+    rgba(166, 35, 128, 1) 0%,
+    rgba(255, 213, 34, 1) 49%,
+    rgba(129, 169, 52, 1) 92%
+  );
+  font-family: "Open Sans", sans-serif;
 }
 
 .header {
@@ -54,7 +59,7 @@ button {
 }
 
 #title {
-  font-family: 'Chewy', cursive;
+  font-family: "Chewy", cursive;
   padding-right: 10px;
 }
 
@@ -74,7 +79,6 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
 }
 
 .memory-card {
@@ -82,23 +86,23 @@ button {
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 
 .memory-card:active {
   transform: scale(0.97);
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .memory-card.flip {
-  transform: rotateY(180deg)
+  transform: rotateY(180deg);
 }
 
 /* KYLE UPDATE: assigned P tag to words on the back of card, transformed because it was reading backwards */
-p{ 
+p {
   transform: rotateY(180deg);
   text-align: center;
 }
