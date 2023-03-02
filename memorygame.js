@@ -20,6 +20,7 @@
 //     return valString;
 //   }
 // }
+
 let started = false;
 
 const startButton = document.getElementById("start-button");
@@ -35,7 +36,6 @@ resetButton.addEventListener("click", (e) => {
   window.location.reload();
 });
 const timer = document.querySelector("#timer");
-
 
 let timeSeconds = 0;
 let timeMinutes = 0;
@@ -53,21 +53,3 @@ const timerFunction = () => {
 const myTimeout = setInterval(timerFunction, 1000);
 
 //look at Matt's random name code for random cards?
-
-
-
-// Select all cards to assign a flip function on click
-
-(() => {
-    
-
-  const card = document.querySelector('.memory-card');
-  card.addEventListener('click', function() {
-    card.classList.toggle('flip');
-  });
-
-
-  
-} )();
-
-
