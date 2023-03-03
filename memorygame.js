@@ -11,7 +11,6 @@
   let hasFlippedCard = false;
   let timeSeconds = 0;
   let timeMinutes = 0;
-  const myTimeout = setInterval(timerFunction, 500); // Needs to be finished, duration of flip time -- if it matches it keeps it on the screen for a certain time -- Jessica
 
 
   //FUNCTIONS (moved to the top so that we can call when needed)
@@ -21,17 +20,6 @@
       card.style.order = randomPos;
     });
   }
-
-  const timerFunction = () => {
-    if (started) {
-      timer.textContent = `Timer: ${timeMinutes}:${timeSeconds}`;
-      timeSeconds++;
-      if (timeSeconds === 60) {
-        timeSeconds = 0;
-        timeMinutes++;
-      }
-    }
-  };
 
 
   // THIS START BUTTON STARTS THE GAME
@@ -167,6 +155,17 @@
   // }, 1500);
   // }
   // });
+  const timerFunction = () => {
+    if (started) {
+      timer.textContent = `Timer: ${timeMinutes}:${timeSeconds}`;
+      timeSeconds++;
+      if (timeSeconds === 60) {
+        timeSeconds = 0;
+        timeMinutes++;
+      }
+    }
+  };
+  //const myTimeout = setInterval(timerFunction, 500); // Needs to be finished, duration of flip time -- if it matches it keeps it on the screen for a certain time -- Jessica
 
 
 })();
