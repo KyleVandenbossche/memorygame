@@ -3,18 +3,19 @@
 
 let started = false; // timer starts at off -- Maggie 
 
+
+// HTML CALLS 
 const cards = document.querySelectorAll(".memory-card"); // calling the memory card html 
 const startButton = document.getElementById("start-button"); // calling the start button 
 const timer = document.querySelector("#timer");
 
+// DECLARED VARS
 let hasFlippedCard = false;
-let firstCard, secondCard; // defining flipped first card + second card for matching
 let timeSeconds = 0;
 let timeMinutes = 0;
 
 
 // THIS START BUTTON STARTS THE GAME
-
 startButton.addEventListener("click", (e) => { // this starts the game, cannot flip cards without pressing the start button 
   started = true;
   startButton.style.backgroundColor = "white";
@@ -22,42 +23,103 @@ startButton.addEventListener("click", (e) => { // this starts the game, cannot f
   timer.style.backgroundColor = "white";
   timer.style.color = "green";
 
-
+  let firstCard = null;
+  let secondCard = null;
 
 // THIS IS THE FLIP CARD FUNCTION 
+  function flipCard(event) { // this function simply flips the card
+    this.classList.add("flip"); // the classlist.add only flips one way -- toggle flips multiple ways
+    console.log(event.target.dataset.animal);
+  
 
-  function flipCard(e) { // this function simply flips the card
-    console.log(e.target.dataset.animal);
-    this.classList.add("flip"); // the classlist.add only flips one way -- toggle flips multiple
-    //push card into array called open cards, if array > 1 length then check for match flipped card [0] 
-  }
+    if (firstCard === null){
+      firstCard = event.target; // assigns firstCard as the variable if a div/img is clicked
+
+    } else {
+      secondCard = event.target; // assigns secondCard as the variable if a div/img is clicked
+     
+
+      if (firstCard.dataset.animal === secondCard.dataset.animal){ // compares the 2 clicks img dataset, if they are the same a MATCH is returned
+        console.log('match');
+
+        // 
+        // ONCE THEY MATCH, WE NEED TO KEEP THEM TURNED AND LOOP THROUGH THE FLIP FUNCTION AGAIN 
+        // 
+
+      } 
+
+      if (firstCard.dataset.animal != secondCard.dataset.animal){ // compares the 2 clicks img dataset, if they are not the same a NO MATCH is returned
+        console.log('no match');
+
+        //
+        // IF THEY DO NOT MATCH, WE NEED TO FLIP THEM OVER AGAIN, AND LOOP THROUGH THE FLIP FUNCTION UNTIL THEY MATCH
+        //
+
+      } 
+
+      firstCard = null;
+      secondCard = null;
+
+      }
+    
+    }
   cards.forEach((card) => card.addEventListener("click", flipCard));
 
 
 
-  if (!hasFlippedCard) { // if nothing happens nothing is assigned
-    hasFlippedCard = true;  // if this happens, continue
-    firstCard = this; // the first card is -- this variable represents the card clicked
-    console.log('hello');
-   return;
-  } 
+  // checkForMatch(); 
 
-secondCard = this;
-hasFlippedCard = false;
+  // function checkForMatch(){
 
-function checkForMatch() {
-if (firstCard.dataset.animal === secondCard.dataset.animal) {
-  // disableCards();
-  console.log("hello");
-  return;
-}
-}
-
-checkForMatch(firstCard, secondCard);
+  //   firstCard = null; // assigning no value to firstCard
+  //   secondCard = null; // assigning no value to secondCard
 
 
+  //   const cards = document.querySelectorAll(".memory-card");
+  //   cards.addEventListener("click", (event) => { 
+
+  //     if (firstCard === null){
+  //      firstCard = event.target; // event.target (if the event happens of clicking) -- it assigns the click as firstCard
+  //      } else {
+  //      secondCard = event.target; // event.target (if the event happens of clicking) -- it assigns the click as secondCard
+      
+
+  //      if (firstCard.target.dataset.animal === secondCard.target.dataset.animal){
+  //       console.log('MATCH');
+  //      }
+
+  // }})
 
 
+
+  // }
+
+
+
+
+
+
+
+
+
+//   if (!hasFlippedCard) { // if nothing happens nothing is assigned
+//     hasFlippedCard = true;  // if this happens, continue
+//     firstCard = this; // the first card is -- this variable represents the card clicked
+//     console.log('hello');
+//    return;
+//   } 
+
+// secondCard = this;
+// hasFlippedCard = false;
+
+// function checkForMatch() {
+// if (firstCard.dataset.animal === secondCard.dataset.animal) {
+//   alert("MATCH");
+//   return;
+// }
+// }
+
+// checkForMatch(firstCard, secondCard);
 
 
 
