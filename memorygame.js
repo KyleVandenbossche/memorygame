@@ -5,19 +5,35 @@
   const cards = document.querySelectorAll(".memory-card"); // calling the memory card html
   const startButton = document.getElementById("start-button"); // calling the start button
   const timer = document.querySelector("#timer");
+  const resetButton = document.querySelector("#reset-button");
 
   // DECLARED VARS
   let hasFlippedCard = false;
   let timeSeconds = 0;
   let timeMinutes = 0;
+  const myTimeout = setInterval(timerFunction, 500); // Needs to be finished, duration of flip time -- if it matches it keeps it on the screen for a certain time -- Jessica
 
-  //shuffle function: Moved to the top so that we can call it when needed.
+
+  //FUNCTIONS (moved to the top so that we can call when needed)
   function shuffle() {
     cards.forEach((card) => {
-      let ramdomPos = Math.floor(Math.random() * 16);
-      card.style.order = ramdomPos;
+      let randomPos = Math.floor(Math.random() * 16);
+      card.style.order = randomPos;
     });
   }
+
+  const timerFunction = () => {
+    if (started) {
+      timer.textContent = `Timer: ${timeMinutes}:${timeSeconds}`;
+      timeSeconds++;
+      if (timeSeconds === 60) {
+        timeSeconds = 0;
+        timeMinutes++;
+      }
+    }
+  };
+
+
   // THIS START BUTTON STARTS THE GAME
   startButton.addEventListener("click", (e) => {
     // this starts the game, cannot flip cards without pressing the start button
@@ -108,22 +124,13 @@
 
     // checkForMatch(firstCard, secondCard);
   });
-  const resetButton = document.querySelector("#reset-button");
+
   resetButton.addEventListener("click", (e) => {
     window.location.reload();
+    shuffle();
   });
 
-  const timerFunction = () => {
-    if (started) {
-      timer.textContent = `Timer: ${timeMinutes}:${timeSeconds}`;
-      timeSeconds++;
-      if (timeSeconds === 60) {
-        timeSeconds = 0;
-        timeMinutes++;
-      }
-    }
-  };
-  const myTimeout = setInterval(timerFunction, 1000);
+
 
   //   if (!hasFlippedCard) {
   //     hasFlippedCard = true;
@@ -160,24 +167,6 @@
   // }, 1500);
   // }
   // });
-  function shuffle() {
-    cards.forEach((card) => {
-      let ramdomPos = Math.floor(Math.random() * 16);
-      card.style.order = ramdomPos;
-    });
-  }
 
-  resetButton.addEventListener("click", (e) => {
-    shuffle();
-  });
 
-  // const myTimeout = setInterval(timerFunction, 500); // Needs to be finished, duration of flip time -- if it matches it keeps it on the screen for a certain time -- Jessica
-
-  //shuffle function
-  // function shuffle() {
-  //   cards.forEach(card => {
-  //     let shuffledCards = Math.floor(Math.random() * array.length); //what array to use with our code?
-  //     card.style.order = shuffledCards;
-  //   });
-  // }
 })();
