@@ -12,12 +12,10 @@ body {
   justify-content: center;
   align-items: center;
   background: rgb(166, 35, 128);
-  background: linear-gradient(
-    90deg,
-    rgba(166, 35, 128, 1) 0%,
-    rgba(255, 213, 34, 1) 49%,
-    rgba(129, 169, 52, 1) 92%
-  );
+  background: linear-gradient(90deg,
+      rgba(166, 35, 128, 1) 0%,
+      rgba(255, 213, 34, 1) 49%,
+      rgba(129, 169, 52, 1) 92%);
   font-family: "Open Sans", sans-serif;
 }
 
@@ -90,6 +88,8 @@ button {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 .memory-card:active {
@@ -115,7 +115,8 @@ p {
   height: 100%;
   padding: 20px;
   position: absolute;
-  /* border-radius: 5px; behaving strangely with other animation feature */
+
+  /* padding not cooperating with border radius */
   background-color: white;
   backface-visibility: hidden;
 }
@@ -130,7 +131,7 @@ p {
 }
 
 
-.match-text{
+.match-text {
   display: hidden;
 }
 

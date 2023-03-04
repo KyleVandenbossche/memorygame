@@ -1,125 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory Game</title>
-    <link rel="stylesheet" href="./memorygame.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chewy&family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <div class="header">
-      <div id="left-side">
-        <h1 id="title">Hablo</h1>
-        <img
-          id="logo"
-          src="images/logo.png"
-          alt="logo"
-        /><!--logo image goes here -->
-      </div>
-      <div id="timer">
-        <!--Timer counts up from zero. Starts as soon as the page loads. JS is already added to file-->
-        <label id="minutes">00</label>:<label id="seconds">00</label>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="./memorygame.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Open+Sans&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header">
+    <div id="left-side">
+      <h1 id="title">Hablo</h1>
+      <img id="logo" src="images/logo.png" alt="logo" /><!--logo image goes here -->
     </div>
-    <main>
-    
-      <!--Memory game container -->
-      <section class="card-container">
-        <div class="memory-card" data-animal="cat">
-          <img class="front" data-animal="cat" src="./images/cat.png" alt="Cat-English" />
-          <img class="back" data-animal="cat" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="cat">
-          <img class="front" data-animal="cat" src="./images/gato.png" alt="Cat-Espanol" />
-          <img class="back" data-animal="cat" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="dog">
-          <img class="front" data-animal="dog" src="./images/Dog.png" alt="Dog-English" />
-          <img class="back" data-animal="dog" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="dog">
-          <img class="front" data-animal="dog" src="./images/perro.png" alt="Dog-Espanol" />
-          <img class="back" data-animal="dog" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="horse">
-          <img class="front" data-animal="horse" src="./images/Horse.png" alt="Horse-English" />
-          <img class="back" data-animal="horse" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="horse">
-          <img class="front" data-animal="horse" src="./images/caballo.png" alt="Horse-Espanol" />
-          <img class="back" data-animal="horse" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="cow">
-          <img class="front" data-animal="cow" src="./images/cow.png" alt="Cow-English" />
-          <img class="back" data-animal="cow" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="cow">
-          <img class="front" data-animal="cow" src="./images/caballo.png" alt="Cow-Espanol" />
-          <img class="back" data-animal="cow" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="mouse">
-          <img class="front" data-animal="mouse" src="./images/Mouse.png" alt="Mouse-English" />
-          <img class="back" data-animal="mouse" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="mouse">
-          <img class="front" data-animal="mouse" src="./images/raton.png" alt="Mouse-Espanol" />
-          <img class="back" data-animal="mouse" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="pig">
-          <img class="front" data-animal="pig" src="./images/Pig.png" alt="Pig-English" />
-          <img class="back" data-animal="pig" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="pig">
-          <img class="front" data-animal="pig" src="./images/cerdo.png" alt="Pig-Espanol" />
-          <img class="back" data-animal="pig" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="goat">
-          <img class="front" data-animal="goat" src="./images/Goat1.svg" alt="Goat-English" />
-          <img class="back" data-animal="goat" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="goat">
-          <img class="front" data-animal="goat" src="./images/cabra.png" alt="Goat-Espanol" />
-          <img class="back" data-animal="goat" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="sheep">
-          <img class="front" data-animal="sheep" src="./images/Sheep.png" alt="Sheep-English" />
-          <img class="back" data-animal="sheep" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-        <div class="memory-card" data-animal="sheep">
-          <img class="front" data-animal="sheep" src="./images/oveja.png" alt="Sheep-Espanol" />
-          <img class="back" data-animal="sheep" src="back_of_card.png" />
-        </div>
-        <div class="bottom-center"></div>
-      </section>
-    </main>
-    <div class="footer">
-      <button type="button" id="hint-button">Hint!</button>
-      <button type="button" id="reset-button">Reset</button>
-      <button type="button" id="start-button">Start</button>
+    <div id="timer">
+      <!--Timer counts up from zero. Starts as soon as the page loads. JS is already added to file-->
+      <label id="minutes">00</label>:<label id="seconds">00</label>
     </div>
-    <script src="./memorygame.js"></script>
-  </body>
+  </div>
+  <main>
+
+    <!--Memory game container -->
+    <section class="card-container">
+      <div class="memory-card" data-animal="cat">
+        <img class="front" data-animal="cat" src="./images/cat.png" alt="Cat-English" />
+        <img class="back" data-animal="cat" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="cat">
+        <img class="front" data-animal="cat" src="./images/gato.png" alt="Cat-Espanol" />
+        <img class="back" data-animal="cat" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="dog">
+        <img class="front" data-animal="dog" src="./images/Dog.png" alt="Dog-English" />
+        <img class="back" data-animal="dog" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="dog">
+        <img class="front" data-animal="dog" src="./images/perro.png" alt="Dog-Espanol" />
+        <img class="back" data-animal="dog" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="horse">
+        <img class="front" data-animal="horse" src="./images/Horse.png" alt="Horse-English" />
+        <img class="back" data-animal="horse" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="horse">
+        <img class="front" data-animal="horse" src="./images/caballo.png" alt="Horse-Espanol" />
+        <img class="back" data-animal="horse" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="cow">
+        <img class="front" data-animal="cow" src="./images/cow.png" alt="Cow-English" />
+        <img class="back" data-animal="cow" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="cow">
+        <img class="front" data-animal="cow" src="./images/vaca.png" alt="Cow-Espanol" />
+        <img class="back" data-animal="cow" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="mouse">
+        <img class="front" data-animal="mouse" src="./images/Mouse.png" alt="Mouse-English" />
+        <img class="back" data-animal="mouse" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="mouse">
+        <img class="front" data-animal="mouse" src="./images/raton.png" alt="Mouse-Espanol" />
+        <img class="back" data-animal="mouse" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="pig">
+        <img class="front" data-animal="pig" src="./images/Pig.png" alt="Pig-English" />
+        <img class="back" data-animal="pig" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="pig">
+        <img class="front" data-animal="pig" src="./images/cerdo.png" alt="Pig-Espanol" />
+        <img class="back" data-animal="pig" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="goat">
+        <img class="front" data-animal="goat" src="./images/Goat1.svg" alt="Goat-English" />
+        <img class="back" data-animal="goat" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="goat">
+        <img class="front" data-animal="goat" src="./images/cabra.png" alt="Goat-Espanol" />
+        <img class="back" data-animal="goat" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="sheep">
+        <img class="front" data-animal="sheep" src="./images/Sheep.png" alt="Sheep-English" />
+        <img class="back" data-animal="sheep" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+      <div class="memory-card" data-animal="sheep">
+        <img class="front" data-animal="sheep" src="./images/oveja.png" alt="Sheep-Espanol" />
+        <img class="back" data-animal="sheep" src="./images/back_of_card.png" />
+      </div>
+      <div class="bottom-center"></div>
+    </section>
+  </main>
+  <div class="footer">
+    <button type="button" id="hint-button">Hint!</button>
+    <button type="button" id="reset-button">Reset</button>
+    <button type="button" id="start-button">Start</button>
+  </div>
+  <script src="./memorygame.js"></script>
+</body>
+
 </html>
