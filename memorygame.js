@@ -12,7 +12,6 @@
   let timeSeconds = 0;
   let timeMinutes = 0;
 
-
   //FUNCTIONS (moved to the top so that we can call when needed)
   function shuffle() {
     cards.forEach((card) => {
@@ -20,7 +19,6 @@
       card.style.order = randomPos;
     });
   }
-
 
   // THIS START BUTTON STARTS THE GAME
   startButton.addEventListener("click", (e) => {
@@ -50,14 +48,16 @@
           // compares the 2 clicks img dataset, if they are the same a MATCH is returned
           console.log("match");
 
-          //
-          // ONCE THEY MATCH, WE NEED TO KEEP THEM TURNED AND LOOP THROUGH THE FLIP FUNCTION AGAIN
-          //
+          firstCard.style.visibility = "hidden";
+          secondCard.style.visibility = "hidden";
         }
 
         if (firstCard.dataset.animal != secondCard.dataset.animal) {
           // compares the 2 clicks img dataset, if they are not the same a NO MATCH is returned
           console.log("no match");
+
+          firstCard.classList.remove("flip");
+          secondCard.classList.remove("flip");
 
           //
           // IF THEY DO NOT MATCH, WE NEED TO FLIP THEM OVER AGAIN, AND LOOP THROUGH THE FLIP FUNCTION UNTIL THEY MATCH
@@ -118,8 +118,6 @@
     shuffle();
   });
 
-
-
   //   if (!hasFlippedCard) {
   //     hasFlippedCard = true;
   //     firstCard = this;
@@ -166,6 +164,4 @@
     }
   };
   const myTimeout = setInterval(timerFunction, 500); // Needs to be finished, duration of flip time -- if it matches it keeps it on the screen for a certain time -- Jessica
-
-
 })();
