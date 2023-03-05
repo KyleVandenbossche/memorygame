@@ -7,6 +7,7 @@
 
   let firstCard = null; //allows user to choose first/second cards
   let secondCard = null;
+  let matchSound = new Audio('./match.wav')
 
 
   // HTML CALLS
@@ -69,6 +70,7 @@
         // compares the 2 clicks img dataset, if they are the same a MATCH is returned
         //console.log("match");
         gotMatch(firstCard, secondCard);
+        matchSound.play()
 
       } else {
         console.log("no match");
