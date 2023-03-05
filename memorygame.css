@@ -89,7 +89,8 @@ button {
   transform-style: preserve-3d;
   transition: transform 0.5s;
   opacity: 1;
-  transition: opacity 1s;
+  transition: opacity 3s;
+  /*not working for first card clicked*/
 }
 
 .memory-card:active {
@@ -99,6 +100,7 @@ button {
 
 .memory-card.flip {
   transform: rotateY(180deg);
+
 }
 
 /* KYLE UPDATE: assigned P tag to words on the back of card, transformed because it was reading backwards */
@@ -115,18 +117,12 @@ p {
   height: 100%;
   padding: 20px;
   position: absolute;
-
-  /* padding not cooperating with border radius */
   background-color: white;
   backface-visibility: hidden;
 }
 
-.front-face {
-  transform: rotateY(180deg);
-}
-
 .front {
-  backface-visibility: visible;
+  backface-visibility: hidden;
   transform: rotateY(180deg);
 }
 
