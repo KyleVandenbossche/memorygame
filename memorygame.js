@@ -6,6 +6,10 @@
   let timeMinutes = 0;
 
   let firstCard = null; //allows user to choose first/second cards
+
+  let secondCard = null;
+  let matchSound = new Audio('./match.wav') //audio plays when match is found
+
   let secondCard = null; // empty value until flipcard is clicked -- until user selects card and assigns it as secondCard
   let matchSound = new Audio('./match.wav') // When card is matched, soundfile will play
 
@@ -34,9 +38,9 @@
       timeSeconds++;
 
       startButton.style.backgroundColor = "white";
-      startButton.style.color = "green";
+      startButton.style.color = "#5D4996";
       timer.style.backgroundColor = "white";
-      timer.style.color = "green";
+      timer.style.color = "#5D4996";
 
       if (timeSeconds === 60) {
         timeSeconds = 0;
@@ -44,6 +48,25 @@
       }
     }
   };
+
+
+  function unFlipCards() {
+    setTimeout(() => {
+      firstCard.parentNode.classList.remove('flip'); //removing class, not card
+      secondCard.parentNode.classList.remove('flip');
+
+      firstCard = null;  //null allows for future card1/2 choices to be made by user if NOT match
+      secondCard = null;
+    }, 1000); //1 second before flipping back over
+  }
+
+  function gotMatch() {
+    firstCard.parentNode.classList.add('dim');
+    secondCard.parentNode.classList.add('dim');
+
+    firstCard = null; //null allows for future card1/2 choices to be made by user IF match
+    secondCard = null;
+
 
   function unFlipCards(firstCard, secondCard) { // function that shows if not a match, reflips the cards that were clicked
     setTimeout(() => {
@@ -55,9 +78,15 @@
   function gotMatch(firstCard, secondCard) {
     firstCard.parentNode.style.opacity = .5; //instead of adding class, we have applied style here
     secondCard.parentNode.style.opacity = .5;
+    
   }
 
   function flipCard(event) {
+    if (firstCard != null && secondCard != null) {
+      console.log(firstCard, secondCard);
+      return; //exits loop, disabling additional flips until previous flip pair has gone through code below
+    }
+
     event.target.parentNode.classList.add('flip');
     console.log(event.target.dataset.animal);
 
@@ -69,16 +98,14 @@
       if (firstCard.dataset.animal === secondCard.dataset.animal) {
         // compares the 2 clicks img dataset, if they are the same a MATCH is returned
         //console.log("match");
-        gotMatch(firstCard, secondCard);
-        matchSound.play()
+        gotMatch(); //calls function to change css display for match
+        matchSound.play(); //sound plays if match
+
 
       } else {
         console.log("no match");
-        unFlipCards(firstCard, secondCard);
+        unFlipCards(); //calls function to flip cards facedown again
       }
-
-      firstCard = null;
-      secondCard = null;
     }
   }
 
@@ -88,8 +115,8 @@
   // THIS START BUTTON STARTS THE GAME
   startButton.addEventListener("click", (event) => {
     //cannot flip cards until start button pressed
-    started = true;
-    timerFunction();
+    started = true; //false -> true only once start button is clicked
+    timerFunction(); //timerFunction called to begin
     shuffle(); //shuffles the cards when you click start so they don't start in the same order.
     cards.forEach((card) => card.addEventListener("click", (cardClick) => {
       flipCard(cardClick);
