@@ -12,10 +12,12 @@ body {
   justify-content: center;
   align-items: center;
   background: rgb(166, 35, 128);
-  background: linear-gradient(90deg,
-      rgba(166, 35, 128, 1) 0%,
-      rgba(255, 213, 34, 1) 49%,
-      rgba(129, 169, 52, 1) 92%);
+  background: linear-gradient(
+    90deg,
+    rgba(166, 35, 128, 1) 0%,
+    rgba(255, 213, 34, 1) 49%,
+    rgba(129, 169, 52, 1) 92%
+  );
   font-family: "Open Sans", sans-serif;
 }
 
@@ -69,6 +71,7 @@ button {
   flex-wrap: wrap;
   color: white;
   perspective: 1000px;
+
   /*3-D flip - sets how far in z plane object is from user. Lower value = bigger effect.*/
 }
 
@@ -100,7 +103,6 @@ button {
 
 .memory-card.flip {
   transform: rotateY(180deg);
-
 }
 
 /* KYLE UPDATE: assigned P tag to words on the back of card, transformed because it was reading backwards */
@@ -115,17 +117,17 @@ p {
 .back {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 5px;
   position: absolute;
   background-color: white;
   backface-visibility: hidden;
+  object-fit: contain;
 }
 
 .front {
   backface-visibility: hidden;
   transform: rotateY(180deg);
 }
-
 
 .match-text {
   display: hidden;
