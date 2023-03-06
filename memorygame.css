@@ -88,9 +88,20 @@ button {
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  opacity: 1;
-  transition: opacity 3s;
   /*not working for first card clicked*/
+}
+
+.dim {
+  transition: opacity 3s;
+  opacity: 0.5;
+}
+
+.dim .back {
+  opacity: 0;
+}
+
+.dim .front {
+  backface-visibility: visible;
 }
 
 .memory-card:active {
@@ -115,10 +126,11 @@ p {
 .back {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 5px;
   position: absolute;
   background-color: white;
   backface-visibility: hidden;
+  object-fit: contain;
 }
 
 .front {
@@ -135,6 +147,16 @@ p {
   .card-container {
     height: 400px;
     width: 550px;
+  }
+
+  .front,
+  .back {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    background-color: white;
+    backface-visibility: hidden;
   }
 
   .footer {
