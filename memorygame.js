@@ -1,38 +1,34 @@
 (() => {
 
   // DECLARED VARS
-  let started = false; //timer starts when true, listed as false when page loads timer hasn't started -- false = off 
-  let timeSeconds = 0; 
+  let started = false; //timer starts when true
+  let timeSeconds = 0;
   let timeMinutes = 0;
 
   let firstCard = null; //allows user to choose first/second cards
-
   let secondCard = null;
   let matchSound = new Audio('./match.wav') //audio plays when match is found
-
-  let secondCard = null; // empty value until flipcard is clicked -- until user selects card and assigns it as secondCard
-  let matchSound = new Audio('./match.wav') // When card is matched, soundfile will play
 
 
   // HTML CALLS
 
   const cards = document.querySelectorAll(".memory-card"); // calling the memory card html
   const startButton = document.getElementById("start-button"); // calling the start button
-  const timer = document.querySelector("#timer"); // calling the timer html
-  const resetButton = document.querySelector("#reset-button"); // calling the reset button 
+  const timer = document.querySelector("#timer");
+  const resetButton = document.querySelector("#reset-button");
 
 
 
   //FUNCTIONS
 
-  function shuffle() { // shuffles the deck randomly when the start button is clicked 
+  function shuffle() {
     cards.forEach((card) => {
       let randomPos = Math.floor(Math.random() * 16);
       card.style.order = randomPos;
     });
   }
 
-  const timerFunction = () => { // timer function starts the clock
+  const timerFunction = () => {
     if (started) {
       timer.textContent = `Timer: ${timeMinutes}:${timeSeconds}`;
       timeSeconds++;
@@ -48,7 +44,6 @@
       }
     }
   };
-
 
   function unFlipCards() {
     setTimeout(() => {
@@ -67,18 +62,6 @@
     firstCard = null; //null allows for future card1/2 choices to be made by user IF match
     secondCard = null;
 
-
-  function unFlipCards(firstCard, secondCard) { // function that shows if not a match, reflips the cards that were clicked
-    setTimeout(() => {
-      firstCard.parentNode.classList.remove('flip'); //removing class, not card
-      secondCard.parentNode.classList.remove('flip');
-    }, 1500); // 
-  }
-
-  function gotMatch(firstCard, secondCard) {
-    firstCard.parentNode.style.opacity = .5; //instead of adding class, we have applied style here
-    secondCard.parentNode.style.opacity = .5;
-    
   }
 
   function flipCard(event) {
@@ -133,3 +116,32 @@
 
 
 })();
+
+
+//   // HINT FUNCTION BUTTON
+//   // HINT FUNCTION BUTTON
+
+//   hintButton.addEventListener("click", hint); // When the hint button is clicked, it calls the hint function
+
+
+//   function hint(){ // hint function flips all cards for 1 second as a hint to the user
+//     cards.forEach(card => {
+//       card.classList.add('flip');
+//       setTimeout(() => card.classList.remove('flip'), 1000);
+
+//       let disableHintButton = document.getElementById("hint-button"); // Setting the limit to 1 hint per game, disable the hint button
+//       disableHintButton.disabled = true;
+//     })
+//   }
+
+//  // HINT FUNCTION BUTTON
+//  // HINT FUNCTION BUTTON
+
+
+//  // MATCH ANIMATION
+//  // MATCH ANIMATION
+
+//  setTimeout(function() {
+//   document.getElementById("match").style.display = "none";
+// }, 1000);
+
