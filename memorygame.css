@@ -56,6 +56,7 @@ button {
   padding: 5px;
   font-size: 1rem;
   margin: 4px;
+  /* font-family: "Chewy", bold; */
 }
 
 #title {
@@ -140,9 +141,47 @@ p {
   transform: rotateY(180deg);
 }
 
-.match-text {
-  display: hidden;
-}
+
+
+
+
+
+
+/* MATCH ANIMATION */ 
+/* MATCH ANIMATION */ 
+  #match {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 175px;
+    opacity: 0;
+    animation: fade-in-out 1s linear forwards;
+    color: rgb(133, 17, 242);
+    font-family: "Chewy", cursive;
+  }
+
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+/* MATCH ANIMATION */ 
+/* MATCH ANIMATION */ 
+
+
+
+
+
+
 
 @media only screen and (min-width: 768px) {
   .card-container {
