@@ -56,7 +56,8 @@ button {
   padding: 5px;
   font-size: 1rem;
   margin: 4px;
-  /* font-family: "Chewy", bold; */
+  font-family: "Chewy", bold;
+  border-radius: 10px;
 }
 
 #title {
@@ -123,6 +124,13 @@ p {
   text-align: center;
 }
 
+.popup{
+  visibility: hidden;
+  height: 150px;
+  width: 150px;
+  color: aquamarine;
+}
+
 /* add to flip class (JS file) to animate */
 
 .front,
@@ -149,7 +157,7 @@ p {
 
 /* MATCH ANIMATION */ 
 /* MATCH ANIMATION */ 
-  #match {
+  /* #match {
     position: fixed;
     top: 60%;
     left: 50%;
@@ -173,7 +181,7 @@ p {
     100% {
       opacity: 0;
     }
-  }
+  } */
 /* MATCH ANIMATION */ 
 /* MATCH ANIMATION */ 
 

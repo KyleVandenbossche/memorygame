@@ -16,6 +16,20 @@
   const startButton = document.getElementById("start-button"); // calling the start button
   const timer = document.querySelector("#timer");
   const resetButton = document.querySelector("#reset-button");
+  let hintButton = document.querySelector('#hint-button');
+  const popup = document.querySelector(".popup");
+  let youWin = 0;
+
+
+  // mute button 
+
+  const muteButton = document.querySelector(`#mute-button`);
+
+  muteButton.addEventListener(`click`, (e) => {
+      muteButton.style.backgroundColor = "red";
+       matchSound = false;
+    });
+
 
 
 
@@ -84,11 +98,26 @@
         gotMatch(); //calls function to change css display for match
         matchSound.play(); //sound plays if match
 
+        youWin++; // increments each match 
+        
+        if (youWin === 8){ // in the event all 8 matches happen, we enter a YOU WIN screen
+          // console.log("YOU WIN!");
+          // alert("You win!");
+          popup.style.display = "block";
+          popup.textContent = "NICE JOB"
+          started = false;
+          
+
+
+
+        }
 
       } else {
         console.log("no match");
         unFlipCards(); //calls function to flip cards facedown again
       }
+      
+
     }
   }
 
@@ -103,6 +132,22 @@
     shuffle(); //shuffles the cards when you click start so they don't start in the same order.
     cards.forEach((card) => card.addEventListener("click", (cardClick) => {
       flipCard(cardClick);
+      startButton.disabled = true; // disables start button 
+
+      function hint(){
+        cards.forEach(card => {
+          card.classList.add('flip');
+          setTimeout(() => card.classList.remove('flip'), 1000);
+          let disableHintButton = document.getElementById("hint-button");
+          disableHintButton.disabled = true;
+        })
+      }
+    
+      hintButton.addEventListener("click", hint);
+
+
+
+
     }))
   });
 
@@ -114,6 +159,35 @@
 
   const myTimeout = setInterval(timerFunction, 1000); // Needs to be finished, duration of flip time -- if it matches it keeps it on the screen for a certain time -- Jessica
 
+
+
+
+  // HINT FUNCTION BUTTON
+  // HINT FUNCTION BUTTON
+
+  // function hint(){
+  //   cards.forEach(card => {
+  //     card.classList.add('flip');
+  //     setTimeout(() => card.classList.remove('flip'), 1000);
+  //     let disableHintButton = document.getElementById("hint-button");
+  //     disableHintButton.disabled = true;
+  //   })
+  // }
+
+  // hintButton.addEventListener("click", hint);
+
+  
+
+ // HINT FUNCTION BUTTON
+ // HINT FUNCTION BUTTON
+
+
+ // MATCH ANIMATION
+ // MATCH ANIMATION
+
+//  setTimeout(function() {
+//   document.getElementById("match").style.display = "none";
+// }, 1000);
 
 })();
 
