@@ -13,10 +13,21 @@ Hablo is a web based memory game that focuses on cognitive building blocks, with
 - Interactive playing cards
 
 ## Gameplay 
-- This is the area where screenshots of the game will be
-- We will add action shots and other items including captures that highlight the games attributes
+- Match animals with the correlated spanish word 
+
+![match demo](demo/match.gif)
+
+
+- Match all 8 animals to win the game
+
+![match demo](demo/match.gif)
+
+
+- Click the Hint Button for a quick peek at the cards!
 
 ![hint demo](demo/hint_animation.gif)
+
+
 
 
 
