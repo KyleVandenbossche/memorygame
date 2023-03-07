@@ -149,7 +149,7 @@ p {
 
 /* MATCH ANIMATION */ 
 /* MATCH ANIMATION */ 
-  #match {
+  /* #match {
     position: fixed;
     top: 60%;
     left: 50%;
@@ -173,7 +173,7 @@ p {
     100% {
       opacity: 0;
     }
-  }
+  } */
 /* MATCH ANIMATION */ 
 /* MATCH ANIMATION */ 
 

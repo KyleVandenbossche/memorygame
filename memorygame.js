@@ -16,6 +16,8 @@
   const startButton = document.getElementById("start-button"); // calling the start button
   const timer = document.querySelector("#timer");
   const resetButton = document.querySelector("#reset-button");
+  let hintButton = document.querySelector('#hint-button')
+  let youWin = 1;
 
 
 
@@ -83,12 +85,18 @@
         //console.log("match");
         gotMatch(); //calls function to change css display for match
         matchSound.play(); //sound plays if match
+        let win = youWin+youWin;
 
+        if (win === 7){
+          console.log("YOU WIN!");
+        }
 
       } else {
         console.log("no match");
         unFlipCards(); //calls function to flip cards facedown again
       }
+      
+
     }
   }
 
@@ -103,6 +111,22 @@
     shuffle(); //shuffles the cards when you click start so they don't start in the same order.
     cards.forEach((card) => card.addEventListener("click", (cardClick) => {
       flipCard(cardClick);
+
+
+      function hint(){
+        cards.forEach(card => {
+          card.classList.add('flip');
+          setTimeout(() => card.classList.remove('flip'), 1000);
+          let disableHintButton = document.getElementById("hint-button");
+          disableHintButton.disabled = true;
+        })
+      }
+    
+      hintButton.addEventListener("click", hint);
+
+
+
+
     }))
   });
 
@@ -114,6 +138,35 @@
 
   const myTimeout = setInterval(timerFunction, 1000); // Needs to be finished, duration of flip time -- if it matches it keeps it on the screen for a certain time -- Jessica
 
+
+
+
+  // HINT FUNCTION BUTTON
+  // HINT FUNCTION BUTTON
+
+  // function hint(){
+  //   cards.forEach(card => {
+  //     card.classList.add('flip');
+  //     setTimeout(() => card.classList.remove('flip'), 1000);
+  //     let disableHintButton = document.getElementById("hint-button");
+  //     disableHintButton.disabled = true;
+  //   })
+  // }
+
+  // hintButton.addEventListener("click", hint);
+
+  
+
+ // HINT FUNCTION BUTTON
+ // HINT FUNCTION BUTTON
+
+
+ // MATCH ANIMATION
+ // MATCH ANIMATION
+
+//  setTimeout(function() {
+//   document.getElementById("match").style.display = "none";
+// }, 1000);
 
 })();
 
