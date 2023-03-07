@@ -16,8 +16,20 @@
   const startButton = document.getElementById("start-button"); // calling the start button
   const timer = document.querySelector("#timer");
   const resetButton = document.querySelector("#reset-button");
-  let hintButton = document.querySelector('#hint-button')
-  let youWin = 1;
+  let hintButton = document.querySelector('#hint-button');
+  const popup = document.querySelector(".popup");
+  let youWin = 0;
+
+
+  // mute button 
+
+  const muteButton = document.querySelector(`#mute-button`);
+
+  muteButton.addEventListener(`click`, (e) => {
+      muteButton.style.backgroundColor = "red";
+       matchSound = false;
+    });
+
 
 
 
@@ -85,10 +97,19 @@
         //console.log("match");
         gotMatch(); //calls function to change css display for match
         matchSound.play(); //sound plays if match
-        let win = youWin+youWin;
 
-        if (win === 7){
-          console.log("YOU WIN!");
+        youWin++; // increments each match 
+        
+        if (youWin === 8){ // in the event all 8 matches happen, we enter a YOU WIN screen
+          // console.log("YOU WIN!");
+          // alert("You win!");
+          popup.style.display = "block";
+          popup.textContent = "NICE JOB"
+          started = false;
+          
+
+
+
         }
 
       } else {
@@ -111,7 +132,7 @@
     shuffle(); //shuffles the cards when you click start so they don't start in the same order.
     cards.forEach((card) => card.addEventListener("click", (cardClick) => {
       flipCard(cardClick);
-
+      startButton.disabled = true; // disables start button 
 
       function hint(){
         cards.forEach(card => {

@@ -56,7 +56,8 @@ button {
   padding: 5px;
   font-size: 1rem;
   margin: 4px;
-  /* font-family: "Chewy", bold; */
+  font-family: "Chewy", bold;
+  border-radius: 10px;
 }
 
 #title {
@@ -121,6 +122,13 @@ button {
 p {
   transform: rotateY(180deg);
   text-align: center;
+}
+
+.popup{
+  visibility: hidden;
+  height: 150px;
+  width: 150px;
+  color: aquamarine;
 }
 
 /* add to flip class (JS file) to animate */
