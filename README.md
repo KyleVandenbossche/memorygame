@@ -15,7 +15,7 @@ Hablo is a web based memory game that focuses on cognitive building blocks, with
 ## Gameplay 
 - Match animals with the correlated spanish word 
 
-![match demo](demo/match.gif)
+![match demo](demo/match_animation.gif)
 
 
 - Match all 8 animals to win the game
