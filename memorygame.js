@@ -35,6 +35,15 @@
 
   //FUNCTIONS
 
+  const jsConfetti = new JSConfetti();
+  function celebration() {
+    jsConfetti.addConfetti({
+      // emojis: [":horse:", ":goat:", ":mouse2:", ":dog:", ":cat2:", ":sheep:", ":cow2:"],
+      confettiColors: ["#5D4996", "#81A934", "#FFD522", "#E44E2F", "#A62380"],
+      confettiNumber: 500,
+    });
+  }
+
   function shuffle() {
     cards.forEach((card) => {
       let randomPos = Math.floor(Math.random() * 16);
@@ -106,10 +115,7 @@
           popup.style.display = "block";
           popup.textContent = "NICE JOB"
           started = false;
-          
-
-
-
+          celebration();
         }
 
       } else {
