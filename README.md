@@ -20,7 +20,7 @@ Hablo is a web based memory game that focuses on cognitive building blocks, with
 
 - Match all 8 animals to win the game
 
-![match demo](demo/match.gif)
+![match demo](demo/win_animation.gif)
 
 
 - Click the Hint Button for a quick peek at the cards!
