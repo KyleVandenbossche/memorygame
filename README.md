@@ -27,6 +27,10 @@ Hablo is a web based memory game that focuses on cognitive building blocks, with
 
 ![hint demo](demo/hint_animation.gif)
 
+- A look at the whole Hablo playing board!
+
+![hablo board](demo/hablo_board.PNG)
+
 
 
 
