@@ -35,10 +35,4 @@ Hablo is a web based memory game that focuses on cognitive building blocks, with
 
 
 
-HABLO Team:
-- Kyle Vandenbossche: Create repo, readme.doc + CSS visibility/JS functions
-- Desiree Cushing: CSS + Design Styling + Creative Wireframing
-- Maggie Wernet: HTML Structure + JS Time button functionality, Cheat button functionality
-- Jessica Trela: Creative Learning, JS Grid structure, JS object functionality
-
 
